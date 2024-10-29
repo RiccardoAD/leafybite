@@ -18,3 +18,161 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* loader */
+.loader {
+  @apply flex items-center justify-center;
+}
+.loader img {
+  @apply w-[160px];
+}
+
+/* meal slider */
+.meals-slider {
+  @apply mx-10;
+}
+.meal-item-wrapper {
+  @apply px-6;
+}
+.meal-item {
+  @apply block;
+}
+
+
+/* utilites stylings for recipe single page */
+.block-title {
+  @apply font-bold tracking-wide py-1;
+}
+.recipe-block {
+  @apply my-6;
+}
+.block-list {
+  @apply my-2;
+}
+.badge-orange {
+  @apply bg-orange inline-block text-white text-sm px-2 py-[2px] capitalize rounded;
+}
+.general-info .block-list {
+  @apply grid grid-cols-2 gap-2;
+}
+.general-info .list-elem {
+  @apply grid grid-cols-2;
+}
+.general-info .list-elem-left {
+  @apply flex items-center;
+}
+.general-info .list-elem-left span {
+  @apply uppercase text-[12px] font-semibold;
+}
+.general-info .list-elem-value {
+  @apply uppercase font-semibold opacity-70 text-[12px];
+}
+.health-labels .block-list {
+  @apply flex flex-wrap;
+}
+.health-labels li {
+  @apply shadow-md me-1 mb-2 py-[3px] px-2 bg-green text-white rounded-md text-sm;
+}
+.ingredients .block-list {
+  @apply grid sm:grid-cols-2 gap-x-8;
+}
+.ingredients .block-list-item {
+  @apply grid grid-cols-[36px_auto] mb-3 border-b-[1px] border-black/10 pb-4;
+}
+.ingredients .badges-group {
+  @apply text-sm text-black/70 mt-1;
+}
+.ingredients .badges-group span {
+  @apply font-medium me-1;
+}
+.nutrients .block-list {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2;
+}
+.nutrients .block-list-item {
+  @apply text-center bg-orange/10 p-3 border-orange/20 border-[1px];
+}
+.images .block-list {
+  @apply flex items-center flex-wrap gap-4;
+}
+.images .block-list-item-wrapper {
+  @apply lg:w-[120px] w-[80px];
+}
+.images .block-list-item {
+  @apply overflow-hidden lg:h-[100px] h-[80px] lg:w-[120px] w-[80px] relative;
+}
+.images .block-list-item img {
+  @apply w-full h-full object-cover;
+}
+.images .image-item-info {
+  @apply text-jet flex items-center justify-between flex-col lg:flex-row text-xs pt-1;
+}
+.images .image-item-size {
+  @apply font-semibold opacity-80;
+}
+.images .image-item-size {
+  @apply text-[10px];
+}
+
+.recipe-single-bottom {
+  @apply bg-white py-1 mt-6;
+}
+
+/* slick slider */
+.slick-slider .slick-arrow.slick-next {
+  @apply right-[2%] scale-[1.4];
+}
+
+.slick-slider .slick-arrow.slick-prev {
+  @apply left-[2%] scale-[1.4] z-10;
+}
+.meals .slick-slider .slick-prev:before,
+.meals .slick-next:before {
+  @apply text-jet;
+}
+.meals .slick-slider .slick-arrow.slick-next {
+  @apply -right-6 -translate-y-2;
+}
+.meals .slick-slider .slick-arrow.slick-prev {
+  @apply -left-6 -translate-y-2;
+}
+
+/* recipe item */
+.recipe-list-item {
+  @apply flex flex-col drop-shadow-xl border-[1px] border-gray/20 rounded-md overflow-hidden;
+}
+.recipe-item-top {
+  @apply h-[280px] md:h-[180px] overflow-hidden;
+}
+.recipe-item-img {
+  @apply w-full h-full object-cover scale-105 default-transition;
+}
+.recipe-item-bottom {
+  @apply flex flex-col justify-between flex-1;
+}
+.recipe-item-name {
+  @apply font-semibold text-[18px];
+}
+.recipe-item-info {
+  @apply flex items-center justify-between flex-wrap my-1 gap-x-4;
+}
+.recipe-item-info li {
+  @apply py-[2px];
+}
+.recipe-item-info li:first-child span:first-child {
+  @apply font-semibold uppercase text-xs;
+}
+.recipe-item-info li:first-child span:last-child {
+  @apply capitalize font-handlee text-sm font-semibold;
+}
+.recipe-item-info li:last-child span {
+  @apply bg-green text-white uppercase text-xs inline-block px-2 py-[3px] rounded;
+}
+.read-btn {
+  @apply flex items-center justify-between bg-orange px-4 py-3 text-white hover:bg-jet default-transition;
+}
+
+/* recipe list */
+.recipe-list {
+  @apply grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 my-4;
+}
