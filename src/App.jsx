@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter
         //  basename={process.env.PUBLIC_URL}
          >
-        <Navbar />
+        {/* <Navbar /> */}
           <Routes>
              <Route exact path="/" element={<Home />} />
             <Route path="/searched/:search" element={<Searched />} />

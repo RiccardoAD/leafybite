@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../../assets/SaladLogo.png'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import { FavoritesContext } from '../../FavoritesContext';
+import  FavoritesContext  from '../../FavoritesContext';
 import { useContext } from 'react';
   import Searchbar from '../Searchbar/Searchbar';
 function Navbar() {

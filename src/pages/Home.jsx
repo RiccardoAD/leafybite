@@ -12,7 +12,6 @@ function Home() {
                 <Vegetarian />
                 <Vegan />
             </div>
-            <p className='info'>Developed by <a href='https://michela-z.github.io/'>Michela Zallocco</a></p>
         </div>
     )
 }
