@@ -2,7 +2,11 @@ import React from 'react'
 import logo from '../../assets/SaladLogo.png'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import { FavoritesContext } from '../../FavoritesContext';
+import { useContext } from 'react';
+  import Searchbar from '../Searchbar/Searchbar';
 function Navbar() {
+  const { favorite } = useContext(FavoritesContext); 
   return (
     <div className='navbar'>
             <Link to={'/'} style={{ textDecoration: 'none' }}>
@@ -11,10 +15,10 @@ function Navbar() {
                     <h3>Leafy<span>Bite</span></h3>
                 </div>
             </Link>
-            {/* <Searchbar /> */}
-            {/* <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
+             <Searchbar /> 
+            <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
                 <h4 className='favorite-link'>Favorites: <span>{favorite.length}</span></h4>
-            </Link> */}
+            </Link> 
             </div>
   )
 }

@@ -11,13 +11,19 @@ function Recipe() {
     let searchValue = params.name;
     const [details, setDetails] = useState({});
     const [isLoading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
+        setLoading(true);
         getRecipeInfo(searchValue)
-        .then((response) => {
-            setDetails(response.data);
-            setLoading(false)
-        })
+            .then((response) => {
+                setDetails(response.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                setError('Errore nel caricamento dei dettagli della ricetta.');
+                setLoading(false);
+            });
     }, [searchValue]);
 
     let diet; 
@@ -31,6 +37,10 @@ function Recipe() {
 
     if(isLoading) {
         return <div className='loading'>Loading...</div>;
+    }
+
+    if (error) {
+        return <div className="error">{error}</div>;
     }
 
     return (
@@ -70,7 +80,7 @@ function Recipe() {
 
                 <div className='instructions'>
                 <h3>Instructions</h3>
-                        {details.analyzedInstructions.map(el => {
+                        {/* {details.analyzedInstructions.map(el => {
                             return el.steps.map(step => {
                                 return (
                                     <div className='instructions-container'>
@@ -81,7 +91,17 @@ function Recipe() {
                                     </div>
                                 )
                             })
-                        })}
+                        })} */}
+                        {details.analyzedInstructions.map((el, instructionIndex) => (
+                        el.steps.map((step, stepIndex) => (
+                            <div className="instructions-container" key={`step-${instructionIndex}-${stepIndex}`}>
+                                <div className="number-cnt">
+                                    <p className="number">{step.number}</p>
+                                </div>
+                                <p>{step.step}</p>
+                            </div>
+                        ))
+                    ))}
                 </div>
             </div>
         </div>
