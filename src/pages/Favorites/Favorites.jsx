@@ -1,86 +1,164 @@
-import { useContext, useEffect, useState } from 'react';
+// import { useContext, useEffect, useState } from 'react';
+// import Navbar from '../../components/Navbar/Navbar';
+// import FavoritesContext from '../../FavoritesContext';
+// import { Link } from 'react-router-dom';
+// import { BsFillTrashFill } from 'react-icons/bs';
+// import './Favorites.css';
+// import { getRecipeInfo } from '../../api';
+
+// function Favorites() {
+
+//     const { favorite, setFavorite } = useContext(FavoritesContext);
+//     const [recipes, setRecipes] = useState([]);
+//     const [newrecipes, setNewrecipes] = useState([]);
+
+//     const getRecipe = () => {
+//         setRecipes([]);
+//         for (let i = 0; i < favorite.length; i++) {
+//             const element = favorite[i];
+//             getRecipeInfo(element)
+//             .then((response) => {
+//                 let title = response.data.title;
+//                 let image = response.data.image;
+//                 let id = response.data.id;
+//                 setRecipes(prev => [...prev, {id: id, title: title, image: image}])
+//             })
+//             .catch((error) => console.log(error))
+//         }
+//     }
+
+//     useEffect(() => {
+//         let uniqueID = [];
+//         const getUnique = () => {
+//             uniqueID = recipes
+//                 .map(e => e['id'])
+//                 .map((e, i, final) => final.indexOf(e) === i && i)
+//             .filter(e => recipes[e]).map(e => recipes[e])
+//             return uniqueID;
+//         }
+//         console.log(getUnique())
+//         setNewrecipes(uniqueID);
+//     },[favorite, recipes])
+
+//     useEffect(() => {
+//         getRecipe()
+//     },[favorite])
+
+//     const saveToLocalStorage = (items) => {
+//         localStorage.setItem('favorites-recipes', JSON.stringify(items))
+//     }
+
+//     const removeFavorite = (id) => {
+//         let index = favorite.indexOf(id);
+//         let newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
+//         setFavorite(newFavoriteList);
+//         saveToLocalStorage(newFavoriteList);
+//     }
+
+//     return (
+//         <div>
+//             <Navbar />
+//             <div className='main-container'>
+//             <h2>Favorites</h2>
+//             <div className='favorites-cnt'>
+//                 {favorite.length !== 0 ? newrecipes.map((recipe) => {
+//                 return (
+//                     <div key={recipe.id}>
+//                         <div className='favorite-page'>
+//                             <div className='favorite-info'>
+//                                 <Link to={'/recipe/' + recipe.id} style={{ textDecoration: 'none' }}>
+//                                     <h3>{recipe.title}</h3>
+//                                 </Link>
+//                             </div>
+//                             <img src={recipe.image} className='favorite-image' alt=''></img>
+//                             <div className='favorite-trash' onClick={() => removeFavorite(recipe.id)}><BsFillTrashFill size={"70px"}/>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 )
+//                 }) : <p className='empty'>No favorites</p>}
+//             </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Favorites
+
+
+import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import FavoritesContext from '../../FavoritesContext';
 import { Link } from 'react-router-dom';
 import { BsFillTrashFill } from 'react-icons/bs';
 import './Favorites.css';
 import { getRecipeInfo } from '../../api';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFavorite, setFavorites } from '../../redux/favoritesSlice';
 
 function Favorites() {
-
-    const { favorite, setFavorite } = useContext(FavoritesContext);
+    const favorite = useSelector((state) => state.favorites.favorite);
+    const dispatch = useDispatch();
     const [recipes, setRecipes] = useState([]);
     const [newrecipes, setNewrecipes] = useState([]);
 
     const getRecipe = () => {
         setRecipes([]);
-        for (let i = 0; i < favorite.length; i++) {
-            const element = favorite[i];
+        favorite.forEach((element) => {
             getRecipeInfo(element)
             .then((response) => {
-                let title = response.data.title;
-                let image = response.data.image;
-                let id = response.data.id;
-                setRecipes(prev => [...prev, {id: id, title: title, image: image}])
+                let { title, image, id } = response.data;
+                setRecipes((prev) => [...prev, { id, title, image }]);
             })
-            .catch((error) => console.log(error))
-        }
-    }
+            .catch((error) => console.log(error));
+        });
+    };
 
     useEffect(() => {
         let uniqueID = [];
         const getUnique = () => {
             uniqueID = recipes
-                .map(e => e['id'])
+                .map((e) => e['id'])
                 .map((e, i, final) => final.indexOf(e) === i && i)
-            .filter(e => recipes[e]).map(e => recipes[e])
+                .filter((e) => recipes[e])
+                .map((e) => recipes[e]);
             return uniqueID;
-        }
-        console.log(getUnique())
-        setNewrecipes(uniqueID);
-    },[favorite, recipes])
+        };
+        setNewrecipes(getUnique());
+    }, [favorite, recipes]);
 
     useEffect(() => {
-        getRecipe()
-    },[favorite])
+        getRecipe();
+    }, [favorite]);
 
-    const saveToLocalStorage = (items) => {
-        localStorage.setItem('favorites-recipes', JSON.stringify(items))
-    }
-
-    const removeFavorite = (id) => {
-        let index = favorite.indexOf(id);
-        let newFavoriteList = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
-        setFavorite(newFavoriteList);
-        saveToLocalStorage(newFavoriteList);
-    }
+    const handleRemoveFavorite = (id) => {
+        dispatch(removeFavorite(id));
+    };
 
     return (
         <div>
             <Navbar />
             <div className='main-container'>
-            <h2>Favorites</h2>
-            <div className='favorites-cnt'>
-                {favorite.length !== 0 ? newrecipes.map((recipe) => {
-                return (
-                    <div key={recipe.id}>
-                        <div className='favorite-page'>
-                            <div className='favorite-info'>
-                                <Link to={'/recipe/' + recipe.id} style={{ textDecoration: 'none' }}>
-                                    <h3>{recipe.title}</h3>
-                                </Link>
-                            </div>
-                            <img src={recipe.image} className='favorite-image' alt=''></img>
-                            <div className='favorite-trash' onClick={() => removeFavorite(recipe.id)}><BsFillTrashFill size={"70px"}/>
+                <h2>Favorites</h2>
+                <div className='favorites-cnt'>
+                    {favorite.length !== 0 ? newrecipes.map((recipe) => (
+                        <div key={recipe.id}>
+                            <div className='favorite-page'>
+                                <div className='favorite-info'>
+                                    <Link to={'/recipe/' + recipe.id} style={{ textDecoration: 'none' }}>
+                                        <h3>{recipe.title}</h3>
+                                    </Link>
+                                </div>
+                                <img src={recipe.image} className='favorite-image' alt='' />
+                                <div className='favorite-trash' onClick={() => handleRemoveFavorite(recipe.id)}>
+                                    <BsFillTrashFill size={"70px"} />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
-                }) : <p className='empty'>No favorites</p>}
-            </div>
+                    )) : <p className='empty'>No favorites</p>}
+                </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Favorites
+export default Favorites;

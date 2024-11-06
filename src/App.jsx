@@ -14,12 +14,12 @@ import Footer from '../src/components/Footer/Footer.jsx';
  import Favorites from './pages/Favorites/Favorites';
 import './App.css';
 
- import { FavoritesProvider } from './FavoritesContext';
+//  import { FavoritesProvider } from './FavoritesContext';
 
 function App() {
 
   return (
-     <FavoritesProvider>
+   //   <FavoritesProvider>
         <BrowserRouter
         //  basename={process.env.PUBLIC_URL}
          >
@@ -32,7 +32,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-     </FavoritesProvider>
+   //   </FavoritesProvider>
   );
 }
 
