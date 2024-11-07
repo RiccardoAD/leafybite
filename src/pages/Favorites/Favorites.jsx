@@ -137,26 +137,38 @@ function Favorites() {
     return (
         <div>
             <Navbar />
-            <div className='main-container'>
-                <h2>Favorites</h2>
-                <div className='favorites-cnt'>
-                    {favorite.length !== 0 ? newrecipes.map((recipe) => (
-                        <div key={recipe.id}>
-                            <div className='favorite-page'>
-                                <div className='favorite-info'>
-                                    <Link to={'/recipe/' + recipe.id} style={{ textDecoration: 'none' }}>
-                                        <h3>{recipe.title}</h3>
-                                    </Link>
-                                </div>
-                                <img src={recipe.image} className='favorite-image' alt='' />
-                                <div className='favorite-trash' onClick={() => handleRemoveFavorite(recipe.id)}>
-                                    <BsFillTrashFill size={"70px"} />
-                                </div>
-                            </div>
-                        </div>
-                    )) : <p className='empty'>No favorites</p>}
+            <div className="main-container">
+    <h2 className="text-2xl font-bold mb-4">Favorites</h2>
+    <div className="favorites-cnt mt-12 flex flex-col h-full">
+        {favorite.length !== 0 ? (
+            newrecipes.map((recipe) => (
+                <div
+                    key={recipe.id}
+                    className="w-[500px] sm:w-[90%] mx-auto h-[90px] sm:h-[100px] rounded-[20px] overflow-hidden mb-5 flex justify-between"
+                >
+                    <div className="favorite-info bg-[#00cc77ba] rounded-[15px] w-[70%] sm:w-[60%] text-white p-4 sm:p-2 mr-2 flex items-center">
+                        <Link to={'/recipe/' + recipe.id} className="text-white font-semibold no-underline">
+                            <h3 className="text-white font-semibold sm:text-[1.2rem]">{recipe.title}</h3>
+                        </Link>
+                    </div>
+                    <img
+                        src={recipe.image}
+                        className="favorite-image h-full w-auto sm:w-[100px] object-cover rounded-[20px]"
+                        alt=""
+                    />
+                    <div
+                        className="favorite-trash bg-[#00cc77ba] rounded-[15px] w-[10%] sm:w-[15%] text-white p-4 sm:p-2 ml-2 flex items-center justify-center hover:bg-[#a6ffda] cursor-pointer"
+                        onClick={() => handleRemoveFavorite(recipe.id)}
+                    >
+                        <BsFillTrashFill size={"70px"} className="sm:w-[40px] sm:h-[40px]" />
+                    </div>
                 </div>
-            </div>
+            ))
+        ) : (
+            <p className="empty text-gray-500">No favorites</p>
+        )}
+    </div>
+</div>
         </div>
     );
 }

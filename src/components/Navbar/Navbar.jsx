@@ -12,16 +12,16 @@ function Navbar() {
   const favorite = useSelector((state) => state.favorites.favorite);
 
   return (
-    <div className='navbar'>
-            <Link to={'/'} style={{ textDecoration: 'none' }}>
-                <div className='logo-container'>
-                    <img src={logo} alt="logo" className='logo'/>
-                    <h3>Leafy<span>Bite</span></h3>
+    <div className='bg-gradient-to-r from-green-600 to-green-500 w-full h-16 text-white flex items-center px-10 sticky top-0 z-40'>
+            <Link to={'/'} className="flex items-center no-underline">
+                <div className="flex items-center text-white">
+                    <img src={logo} alt="logo" className='w-8 mr-2'/>
+                    <h3 className="font-semibold" >Leafy<span className="font-bold">Bite</span></h3>
                 </div>
             </Link>
-             <Searchbar /> 
-            <Link to={'/favorites/'} style={{ textDecoration: 'none' }}>
-                <h4 className='favorite-link'>Favorites: <span>{favorite.length}</span></h4>
+             {/* <Searchbar />  */}
+            <Link to={'/favorites/'} className="ml-auto no-underline hover:underline">
+                <h4 className="font-medium">Favorites: <span>{favorite.length}</span></h4>
             </Link> 
             </div>
   )
