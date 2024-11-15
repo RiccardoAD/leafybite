@@ -48,7 +48,7 @@ function Recipe() {
              <Navbar /> 
             <div className="text-gray-600 mt-20 mx-auto px-12 max-w-5xl" key={details.id}>
 
-                <h2 className="text-3xl font-bold" >{details.title}</h2>
+                <h2 className="text-3xl text-emerald-600 font-bold" >{details.title}</h2>
 
                 <div className="flex flex-wrap my-5 space-x-4">{details.diets.map((item) => (
                     <p key={item.id} className="border border-gray-300 rounded-lg px-2 py-1" >{item}</p>

@@ -43,7 +43,7 @@ const RecipeSearch = () => {
 
     return (
         <div className="mt-12 md:mt-20 min-h-screen w-full">
-            <h1 className='text-center font-subtitle pt-6 pb-2 md:pb-1 text-3xl md:text-5xl font-bold text-[#3a5a40]'>Results for "{query}"</h1>
+            <h1 className='text-center  pt-6 pb-2 md:pb-1 text-3xl md:text-5xl font-bold text-[#3a5a40]'>Results for "{query}"</h1>
             {isLoading ? (
                 <div className="text-center flex items-center justify-center mt-4">
                     <Spinner className="h-12 w-12" color='red'/>
