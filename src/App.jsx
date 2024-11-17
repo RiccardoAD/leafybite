@@ -7,7 +7,7 @@ import {
  import Home from './pages/Home';
   import Searched from './pages/Searched/Searched';
 import Recipe from "./pages/Recipe/Recipes.jsx";
-import Navbar from '../src/components/Navbar/Navbar.jsx';
+// import Navbar from '../src/components/Navbar/Navbar.jsx';
 import Footer from '../src/components/Footer/Footer.jsx';
 
 

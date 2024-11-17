@@ -137,8 +137,8 @@ function Favorites() {
     return (
         <div>
             <Navbar />
-            <div className="main-container">
-    <h2 className="text-2xl font-bold mb-4">Favorites</h2>
+            <div className="flex flex-col h-full">
+    <h2 className=" flex justify-between ml-5  text-green-800 md:text-2xl text-xl font-extrabold mb-4 md:!leading-[55px]">Favorites</h2>
     <div className="favorites-cnt mt-12 flex flex-col h-full">
         {favorite.length !== 0 ? (
             newrecipes.map((recipe) => (
@@ -165,7 +165,7 @@ function Favorites() {
                 </div>
             ))
         ) : (
-            <p className="empty text-gray-500">No favorites</p>
+            <p className="empty text-center  ml-5  text-green-800 md:text-2xl text-xl font-extrabold mb-4 md:!leading-[55px] ">No favorites</p>
         )}
     </div>
 </div>
