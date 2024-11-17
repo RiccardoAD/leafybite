@@ -1,8 +1,35 @@
-# React + Vite
+<h1 align="left">Leafy Bite</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+###
 
-Currently, two official plugins are available:
+<h2 align="left">Descrizione</h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+###
+
+<p align="left">Questa applicazione si basa sul servizio esterno di Spoonacular e mostra esclusivamente ricette vegetariane o vegane. Tra queste, tramite la barra di ricerca, è possibile ricercare ricette con uno specifico ingrediente. È possibile inoltre salvare le ricette di nostro interesse tra i preferiti. Cliccando sulla scheda di anteprima di ogni ricetta si viene reindirizzati alla pagina con i dettagli.</p>
+
+###
+
+<p align="left"></p>
+
+###
+
+<h2 align="left">Costruito con</h2>
+
+###
+
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="40" alt="tailwindcss logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height="40" alt="redux logo"  />
+</div>
+
+###
+
+<h2 align="left"></h2>
+
+###
+
+###
