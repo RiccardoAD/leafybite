@@ -8,7 +8,7 @@
 
 <p align="left">Questa applicazione si basa sul servizio esterno di Spoonacular e mostra esclusivamente ricette vegetariane o vegane. Tra queste, tramite la barra di ricerca, è possibile ricercare ricette con uno specifico ingrediente. È possibile inoltre salvare le ricette di nostro interesse tra i preferiti. Cliccando sulla scheda di anteprima di ogni ricetta si viene reindirizzati alla pagina con i dettagli.</p>
 
-puoi provare il mio progrtto qui <a href="https://leafybite.netlify.app/">HERE</a>
+ clicca qui per provare  il mio progetto <a href="https://leafybite.netlify.app/">LEAFFYBITE </a>
 
 ###
 
