@@ -5,7 +5,7 @@ import './Navbar.css'
 // import  FavoritesContext  from '../../FavoritesContext';
 // import { useContext } from 'react';
 import { useSelector } from 'react-redux'; 
-  import Searchbar from '../Searchbar/Searchbar';
+  // import Searchbar from '../Searchbar/Searchbar';
 function Navbar() {
   // const { favorite } = useContext(FavoritesContext); 
 
@@ -23,7 +23,10 @@ function Navbar() {
             <Link to={'/favorites/'} className="ml-auto no-underline hover:underline">
                 <h4 className="font-medium">Favorites: <span>{favorite.length}</span></h4>
             </Link> 
-            </div>
+            <Link to={'/meals/'} className="ml-auto no-underline hover:underline">
+                <h4 className="font-medium"> Meal Planner </h4>
+            </Link> 
+ </div>
   )
 }
 

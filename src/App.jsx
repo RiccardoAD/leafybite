@@ -5,13 +5,13 @@ import {
   
    Routes, BrowserRouter } from "react-router-dom";
  import Home from './pages/Home';
-  import Searched from './pages/Searched/Searched';
+ import Searched from './pages/Searched/Searched';
 import Recipe from "./pages/Recipe/Recipes.jsx";
 // import Navbar from '../src/components/Navbar/Navbar.jsx';
 import Footer from '../src/components/Footer/Footer.jsx';
 
-
  import Favorites from './pages/Favorites/Favorites';
+import Meals from "./pages/Meals.jsx";
 import './App.css';
 
 //  import { FavoritesProvider } from './FavoritesContext';
@@ -29,6 +29,7 @@ function App() {
             <Route path="/searched/:search" element={<Searched />} />
             <Route path="/recipe/:name" element={<Recipe />} /> 
              <Route path="/favorites/" element={<Favorites />} /> 
+             <Route path="/meals" element={<Meals />} />
           </Routes>
           <Footer />
         </BrowserRouter>
