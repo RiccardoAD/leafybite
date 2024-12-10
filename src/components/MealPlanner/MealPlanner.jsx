@@ -84,7 +84,7 @@ const MealPlanner = () => {
 
     return (
         <div className='mt-12 md:mt-20 min-h-screen w-full'>
-            <h1 className='text-center font-subtitle pt-6 pb-2 md:pb-1 text-3xl md:text-5xl font-bold text-[#3a5a40]'>Meal Planner</h1>
+            <h1 className='text-center font-subtitle pt-6 pb-2 md:pb-1 text-3xl md:text-5xl font-bold text-green-700'>Meal Planner</h1>
             {isLoading ? (
                 <div className="text-center flex items-center justify-center mt-4">
                     <Spinner className="h-12 w-12" color='red'/>
@@ -94,7 +94,7 @@ const MealPlanner = () => {
             ) : (Object.keys(mealPlan).length === 0 ? (
                 <>
                     <h3 className='text-center font-subtitle pt-2 pb-2 md:pb-1 text-2xl md:text-2xl font-semibold text-[#3a5a40]'>Generate your own custom meal plan!</h3>
-                    <div className="w-fit h-full mx-auto bg-white rounded-lg shadow-md p-5 mt-6">
+                    <div className="w-fit h-full mx-auto bg-white rounded-lg shadow-xl p-5 mt-6">
                         <form>
                             <div className="flex flex-col gap-3 justify-center">
                                 <div className="flex flex-col md:flex-row items-center">
@@ -118,7 +118,7 @@ const MealPlanner = () => {
                                     <input type="text" value={exclude} onChange={(e) => setExclude(e.target.value)} className="border border-black rounded p-2" />
                                 </div>
 
-                                <button type="button" onClick={handleGenerateMealPlan} className="bg-[#3a5a40] text-white py-2 rounded hover:bg-green-600">
+                                <button type="button" onClick={handleGenerateMealPlan} className="bg-green-500 text-white py-2 rounded hover:bg-green-600">
                                     Generate Meal Plan
                                 </button>
                             </div>
@@ -127,9 +127,9 @@ const MealPlanner = () => {
                 </>
             ) : (
                 <div>
-                    <h3 className='text-center font-subtitle pt-2 pb-2 md:pb-4 text-2xl md:text-3xl font-semibold text-[#3a5a40]'>Here's your {diet} Meal Plan - {targetCalories}Kcal </h3>
+                    <h3 className='text-center font-subtitle pt-2 pb-2 md:pb-4 text-2xl md:text-3xl font-semibold text-green-700'>Here's your {diet} Meal Plan - {targetCalories}Kcal </h3>
                     <div className="text-center"> 
-                        <button type="button" onClick={handleNewMealPlan} className="py-2 px-2 rounded-lg bg-[#29754b] text-white font-bold hover:bg-[#155833] duration-300">
+                        <button type="button" onClick={handleNewMealPlan} className="py-2 px-2 rounded-lg bg-green-500 text-white font-bold hover:bg-green-700 duration-300">
                             Generate a New Meal Plan
                         </button>
                     </div>
