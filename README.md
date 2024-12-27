@@ -26,10 +26,10 @@ The main page of the site features vegan recipies and a feature to meals prep wi
 
 # Example page
 
-you can add your favorites recipies in the favourites list .
+responsive recepies page .
 
 <p align="center">
-  <img src="src/assets/screenshot/Screenshot 2024-11-17 182934.pngg" alt="Size Limit CLI" width="350">
+  <img src="src/assets/screenshot/Screenshot 2024-11-17 182934.png" alt="Size Limit CLI" width="350">
 </p>
 
 ###
