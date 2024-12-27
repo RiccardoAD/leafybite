@@ -8,7 +8,29 @@
 
 <p align="left">Questa applicazione si basa sul servizio esterno di Spoonacular e mostra esclusivamente ricette vegetariane o vegane. Tra queste, tramite la barra di ricerca, è possibile ricercare ricette con uno specifico ingrediente. È possibile inoltre salvare le ricette di nostro interesse tra i preferiti. Cliccando sulla scheda di anteprima di ogni ricetta si viene reindirizzati alla pagina con i dettagli.</p>
 
- clicca qui per provare  il mio progetto <a href="https://leafybite.netlify.app/">LEAFFYBITE </a>
+###
+
+<p align="left">This application is based on the external Spoonacular service and exclusively displays vegetarian or vegan recipes. Using the search bar, you can look for recipes containing a specific ingredient. Additionally, it is possible to save recipes of interest as favorites. Clicking on the preview card of each recipe redirects you to the detailed recipe page.</p>
+
+click for try my project <a href="https://leafybite.netlify.app/">LEAFFYBITE </a>
+
+# Home
+
+The main page of the site features vegan recipies and a feature to meals prep with imput calories.
+
+<p align="center">
+  
+  <img src="src/assets/screenshot/Screenshot 2024-11-17 182915.png" alt="Size Limit CLI" width="350">
+  <img src="src/assets/screenshot/Screenshot 2024-11-17 182934.png" alt="Size Limit CLI" width="350">
+</p>
+
+# Example page
+
+Each entry in the sidebar corresponds to a specific content, which includes a brief description of the topic, two lists pertaining to impacts, solutions and a chart for data visualization.
+
+<p align="center">
+  <img src="src/assets/img/screenshots//mobileview.png" alt="Size Limit CLI" width="350">
+</p>
 
 ###
 
