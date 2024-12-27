@@ -16,7 +16,7 @@ click for try my project <a href="https://leafybite.netlify.app/">LEAFFYBITE </a
 
 # Home
 
-The main page of the site features vegan recipies and a feature to meals prep with imput calories.
+The main page of the site features vegan recipies and a feature to meals prep planner with input calories.
 
 <p align="center">
   
