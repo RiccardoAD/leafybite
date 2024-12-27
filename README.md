@@ -21,15 +21,15 @@ The main page of the site features vegan recipies and a feature to meals prep wi
 <p align="center">
   
   <img src="src/assets/screenshot/Screenshot 2024-11-17 182915.png" alt="Size Limit CLI" width="350">
-  <img src="src/assets/screenshot/Screenshot 2024-11-17 182934.png" alt="Size Limit CLI" width="350">
+  <img src="src/assets/screenshot/Screenshot 2024-11-17 183027.png" alt="Size Limit CLI" width="350">
 </p>
 
 # Example page
 
-Each entry in the sidebar corresponds to a specific content, which includes a brief description of the topic, two lists pertaining to impacts, solutions and a chart for data visualization.
+you can add your favorites recipies in the favourites list .
 
 <p align="center">
-  <img src="src/assets/img/screenshots//mobileview.png" alt="Size Limit CLI" width="350">
+  <img src="src/assets/screenshot/Screenshot 2024-11-17 182934.pngg" alt="Size Limit CLI" width="350">
 </p>
 
 ###
